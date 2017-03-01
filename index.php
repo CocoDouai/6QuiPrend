@@ -21,6 +21,6 @@
   // Execute the requested action
   $controller->execute();
   } catch (Exception $e) {
-  echo 'Error : ' . $e->getMessage() . "\n";
+    echo 'Error : ' . $e->getMessage() . "\n";
   }
 ?>
