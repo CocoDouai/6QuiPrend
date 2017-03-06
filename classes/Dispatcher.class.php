@@ -16,7 +16,11 @@ class Dispatcher extends MyObject {
       throw new Exception("$controllerName does not exists");
     }
       return new $controllerClassName($request);
-}
+    }
+
+  // public static function getCurrentDispatcher() {
+  //
+  // }
 
 }
 

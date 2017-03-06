@@ -8,6 +8,11 @@ class Controller extends MyObject {
     $this->request=$requete;
   }
 
+  public function defaultAction($args) {
+    $view = new AnonymousView($this, 'default');
+    $view->render();
+  }
+
   public function execute() {
     $methodName = $this->request->getActionName();
 

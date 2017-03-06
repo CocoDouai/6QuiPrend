@@ -38,6 +38,11 @@
         throw new Exception("$arg does not exist !");
       }
     }
+
+    public function write($controller, $name) {
+      $controllerClassName = ucfirst($name);
+      return $controllerClassName;
+    }
   }
 
 ?>
