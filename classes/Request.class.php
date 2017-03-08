@@ -39,9 +39,11 @@
       }
     }
 
-    public function write($controller, $name) {
-      $controllerClassName = ucfirst($name);
-      return $controllerClassName;
+    public function write($argToChange, $newArg) {
+      if(isset($_GET[$argToChange])) {
+        return $_GET[$argToChange];
+      }
+      return $newArg;
     }
   }
 

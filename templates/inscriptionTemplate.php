@@ -7,7 +7,7 @@
   <table>
   <tr>
   <th>Login* :</th>
-  <td><input type="text" name="inscLogin"/></td>
+  <td><input type="varchar[20]" name="inscLogin"/></td>
   </tr>
   <tr>
   <th>Mot de passe* :</th>

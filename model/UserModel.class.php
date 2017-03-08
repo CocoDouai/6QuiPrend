@@ -2,7 +2,7 @@
 
 class UserModel extends Model {
 
-  $pdo = DatabasePDO('localhost', 'test', 'root', '', null, "mysql:host=localhost;dbname=test");
+  public $pdo = DatabasePDO;
 
   public static function isLoginUsed($login) {
     $pdo->exec("SELECT * FROM users WHERE $login = users.login");

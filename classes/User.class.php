@@ -2,41 +2,37 @@
 
 class User extends MyObject {
 
+    public $pdo = DatabasePDO;
 
-//   public static function isLoginUsed($login) {
-//     // requête SQL vers bdd afin de voir si $login existe ou pas
-//     return false;
-//   }
-//
-//   public static function create($login, $password, $mail, $nom, $prenom) {
-// // création d'un utilisateur dans la bdd
-//     return true;
-//   }
+        private $DB_HOST = 'localhost';
+        private $DB_NAME = '6quiprend';
+        private $DB_USER = 'root';
+        private $DB_PWD = 'root';
+        private $db_connection = null;
+        private $dsn = 'mysql:host=localhost;dbname=6quiprend';
 
-  private $id;
-  private $name;
-  private $surname;
-  private $email;
+    public static function isLoginUsed($login) {
+      $pdo = new DatabasePDO('mysql:host=localhost;port=3306;dbname=6quiprend', 'root', 'root');
+      // exec("SELECT * FROM users WHERE $login = users.login");
+      // $resultat = $pdo->exec("SELECT * FROM joueur WHERE $login = joueur.pseudo");
+      $resultat = $pdo->query("SELECT * FROM joueur WHERE pseudo = $login");
+      // if($resultat) {
+      //   echo 'true';
+      //   return true;
+      // }
+      // echo 'false';
+      // return false;
+      // $resultat->fetch(PDO::FETCH_ASSOC);
+      // $pdo->exec("INSERT INTO joueur VALUES ($login,'prigentcorentin56@gmail.com',NULL,NULL,'coco',NULL,1)");
 
-  public function toHtml()
-  {
-    echo "<ul><li>Id : " . $this->id . "</li>";
-    echo "<li>Name : " . $this->name . "</li>";
-    // echo "<li>Surname : ". $this->surname ."</li>";
-    echo "<li>Email : " . $this->email . "</li></ul>";
-  }
-  }
+    }
 
-  $sql = 'select id, name from users';
-  $request = $db_connection->query($sql);
-  echo '<h1>Users</h1>';
-  $allUsers = $request->fetchAll(PDO::FETCH_CLASS,'User');
-  // for(int i=0; i<sizeof($allUsers); i++) {
-  // 	$allUsers[i]->toHtml();
-  // }
-  foreach ($allUsers as $key) {
-    $key->toHtml();
+    public static function create($login, $password, $mail, $nom, $prenom) {
+
+    }
+
+
 
   }
 
-?>
+   ?>
