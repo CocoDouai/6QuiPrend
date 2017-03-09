@@ -13,7 +13,6 @@
 
     public function __construct() {
       $this->controllerName = 'Anonymous';
-
     }
 
     public function getControllerName() {
@@ -40,10 +39,7 @@
     }
 
     public function write($argToChange, $newArg) {
-      if(isset($_GET[$argToChange])) {
-        return $_GET[$argToChange];
-      }
-      return $newArg;
+      $_GET[$argToChange] = $newArg;
     }
   }
 

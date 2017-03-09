@@ -1,13 +1,13 @@
 <h2>Inscription</h2>
   <?php
     if(isset($inscErrorText))
-    echo '<span class="error">' . $inscErrorText . '</span>';
+    echo 'erreur : <span class="error">' . $inscErrorText . '</span>';
   ?>
   <form action="index.php?action=validateInscription" method="post">
   <table>
   <tr>
   <th>Login* :</th>
-  <td><input type="varchar[20]" name="inscLogin"/></td>
+  <td><input type="text" name="inscLogin"/></td>
   </tr>
   <tr>
   <th>Mot de passe* :</th>

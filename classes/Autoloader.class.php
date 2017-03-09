@@ -11,7 +11,7 @@
   // an unknown class name in the source code
     private function load($className) {
       // $this->log(__CLASS__ . 'load: ' . $classname);
-      $paths = array( '/classes/', '/model/', '/controller/', '/view/' );
+      $paths = array( '/classes/', '/model/', '/controller/', '/view/', '/sql/' );
       $fileToLoad = null;
       $i = 0;
 

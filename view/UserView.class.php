@@ -1,6 +1,6 @@
 <?php
 
-  class View extends View {
+  class UserView extends View {
 
 
   }

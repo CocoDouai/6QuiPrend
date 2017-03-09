@@ -25,16 +25,27 @@ class AnonymousController extends Controller {
       $prenom = $args->read('prenom');
       $mail = $args->read('mail');
       $user = User::create($login, $password,$mail,$nom,$prenom);
-    if(!isset($user)) {
-      $view = new View($this,'inscription');
-      $view->setArg('inscErrorText', 'Cannot complete inscription');
-      $view->render();
-    } else {
-      $newRequest = new Request();
-      $newRequest->write('controller','user');
-      $newRequest->write('user',$user->id());
-        Dispatcher::getCurrentDispatcher()->dispatch($newRequest);
-    }
+      if(!isset($user)) {
+        $view = new AnonymousView($this,'inscriptionTemplate');
+        $view->setArg('inscErrorText', 'Cannot complete inscription');
+        $view->render();
+      } else {
+        require_once('/sql/User.sql.php');
+        DB_createUser($user);
+        // $user->getId();
+        $newRequest = new Request();
+        $newRequest->write('controller','user');
+        $newRequest->write('user',$user->setId());
+        $newRequest->write('action', 'defaultAction');
+        $controller=Dispatcher::getCurentDispatcher()->dispatch($newRequest);
+
+
+        $controller->execute();
+
+        // // print_r($newRequest);
+        // var_dump($_GET);
+        // Dispatcher::theDispatch($newRequest);
+      }
 }
 
 

@@ -2,8 +2,17 @@
 
 class Dispatcher extends MyObject {
 
-  public function __construct() {
-    spl_autoload_register(array($this, 'load'));
+  protected static $uniqueInstance = NULL;
+
+  // public function __construct() {
+  //   spl_autoload_register(array($this, 'load'));
+  // }
+
+  public static function getCurentDispatcher() {
+    if(is_null(self::$uniqueInstance)) {
+      static::$uniqueInstance = new static();
+    }
+    return static::$uniqueInstance;
   }
 
   public static function dispatch($request) {
@@ -18,9 +27,10 @@ class Dispatcher extends MyObject {
       return new $controllerClassName($request);
     }
 
-  // public static function getCurrentDispatcher() {
-  //
-  // }
+      public static function theDispatch($request) {
+        return static::dispatchToController($request->getControllerName(),$request);
+
+    }
 
 }
 

@@ -13,6 +13,11 @@ class Controller extends MyObject {
     $view->render();
   }
 
+  public function game($args) {
+    $v = new UserView($this->user);
+    $v->render();
+  }
+
   public function execute() {
     $methodName = $this->request->getActionName();
 
