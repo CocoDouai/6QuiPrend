@@ -60,6 +60,12 @@ class User extends Model {
       return $this->id;
     }
 
+    // if(isset($user)) {
+    //
+    //   echo $user->nom();
+    //   echo $user->login();
+    // }
+
     public function setId() {
       $this->id = getId($this->login);
     }
