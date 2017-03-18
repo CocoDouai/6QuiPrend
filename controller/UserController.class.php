@@ -7,6 +7,11 @@ class UserController extends Controller {
     $view->render();
   }
 
+  public function listeDesParties($args) {
+    $view = new UserView($this, 'listePartie');
+    $view->render();
+  }
+
 
 }
 

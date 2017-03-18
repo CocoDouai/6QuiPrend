@@ -1,6 +1,6 @@
 <?php
 
-class AnonymousView extends View {
+class PersonnalisationView extends View {
 
 
   public function __construct($controller, $templateName) {

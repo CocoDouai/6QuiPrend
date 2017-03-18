@@ -26,9 +26,10 @@ a:hover {
 
 html,
 body {
-  background-image: url("./image/fond.jpg");
+  background-image: url("./image/image.jpg");
   background-repeat: no-repeat;
-  background-position: center;
+  background-size: cover;
+  overflow: hidden;
   height: 100%;
   background-color: #333;
 }
@@ -170,4 +171,32 @@ body {
   background-color: #f03434;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+#mesCartes {
+  margin-top: 80px;
+}
+
+#mesCartes li
+  {
+    display: inline;
+    list-style-type: none;
+    padding-right: 40px;
+    padding-left: 20px;
+  }
+
+#lesTas {
+  margin-left: -200px;
+  margin-top: 50px;
+}
+
+#lesTas ul {
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+
+#lesTas ul li {
+  display: inline;
+  list-style-type: none;
+  padding-left: 50px;
 }

@@ -7,9 +7,32 @@ class AnonymousController extends Controller {
     $view->render();
   }
 
-  public function inscription($args) {
+  public function Entrer($args) {
     $view = new AnonymousView($this, 'inscriptionTemplate');
     $view->render();
+  }
+
+  public function Bienvenue($args) {
+    $view = new ConnexionView($this, 'inscriptionTemplate');
+    $view->render();
+  }
+
+  public function validateConnexion($args) {
+    $login = $args->read('conLogin');
+    $password = $args->read('conPassword');
+    if(User::isPasswordCorrect($login, $password)) {
+      $view = new AnonymousView($this, 'inscriptionTemplate');
+      $view->setArg('conErrorText', 'You make a mistake tapping your password');
+      $view->render();
+    }
+    else {
+      $newRequest = new Request();
+      $newRequest->write('controller','user');
+      // $newRequest->write('user',$user->setId());
+      $newRequest->write('action', 'defaultAction');
+      $controller=Dispatcher::getCurentDispatcher()->dispatch($newRequest);
+      $controller->execute();
+    }
   }
 
   public function validateInscription($args) {
@@ -33,6 +56,8 @@ class AnonymousController extends Controller {
         require_once('/sql/User.sql.php');
         DB_createUser($user);
         // $user->getId();
+        $_SESSION['user']=$user;
+        print_r($user);
         $newRequest = new Request();
         $newRequest->write('controller','user');
         $newRequest->write('user',$user->setId());

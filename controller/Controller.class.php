@@ -27,6 +27,26 @@ class Controller extends MyObject {
     $this->$methodName($this->request);
   }
 
+  public function listeDesParties($args) {
+    $view = new AnonymousView($this, 'listePartie');
+    $view->render();
+  }
+
+  public function retourAccueil($args) {
+    $view = new UserView($this, 'userTemplate');
+    $view->render();
+  }
+
+  public function jouerPartie($args) {
+    $view = new AnonymousView($this, 'partieTemplate');
+    $view->render();
+  }
+
+  public function monJoueur($args) {
+    $view = new PersonnalisationView($this, 'monAvatar');
+    $view->render();
+  }
+
 }
 
  ?>

@@ -24,7 +24,9 @@ class Dispatcher extends MyObject {
     if(!class_exists($controllerClassName)) {
       throw new Exception("$controllerName does not exists");
     }
+      // if(ucfirst($controllerName)='User' && $_SESSION['user']) {
       return new $controllerClassName($request);
+    // }
     }
 
       public static function theDispatch($request) {

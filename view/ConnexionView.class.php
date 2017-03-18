@@ -1,11 +1,11 @@
 <?php
 
-class AnonymousView extends View {
+class ConnexionView extends View {
 
 
   public function __construct($controller, $templateName) {
       $this->templateNames = array();
-      // $this->templateNames['head'] = 'head';
+      $this->templateNames['head'] = 'headNonInscrit';
       // $this->templateNames['top'] = 'top';
       $this->templateNames['content'] = $templateName;
       // $this->templateNames['foot'] = 'foot';

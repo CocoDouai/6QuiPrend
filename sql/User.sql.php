@@ -2,7 +2,7 @@
 
 function DB_createUser($user){
   $pdo = DatabasePDO::getCurrentPDO();
-  $resultat = $pdo->prepare("INSERT INTO joueur (PSEUDO, ADRESSE_MEL, PARTIES_GAGNEES, PARTIES_PERDUES, MDP, SCORE_GENERAL, ID_JOUEUR) VALUES (:login, :mail, NULL, NULL, :password, NULL, NULL)");
+  $resultat = $pdo->prepare("INSERT INTO joueur (PSEUDO, ADRESSE_MEL, PARTIES_GAGNEES, NB_PARTIES_JOUEE, MDP, SCORE_GENERAL, ID_JOUEUR) VALUES (:login, :mail, NULL, NULL, :password, NULL, NULL)");
   try {
     $resultat->execute(array(
       "login" => $user->login,

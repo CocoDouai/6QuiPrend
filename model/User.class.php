@@ -29,6 +29,18 @@ class User extends Model {
 
     }
 
+    public static function isPasswordCorrect($login, $password) {
+      $pdo = DatabasePDO::getCurrentPDO();
+      $resultat = $pdo->prepare("SELECT pseudo FROM joueur WHERE pseudo = '$login' AND mdp = '$password' ");
+      $resultat->execute();
+      $result = $resultat->fetch(PDO::FETCH_ASSOC);
+      // print_r($result);
+      if($result["pseudo"] != NULL) {
+        return false;
+      }
+      return true;
+    }
+
     public static function getList() {
       return parent::exec('USER_LIST');
     }

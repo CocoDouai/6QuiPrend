@@ -2,9 +2,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-<script type="text/javascript" src="">
 
-</script>
       <div class="navbar-wrapper">
         <div class="container">
 
@@ -22,8 +20,8 @@
               <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                   <li class="active"><a href="#">Accueil</a></li>
-                  <li><a href="#about">Informations</a></li>
-                  <li><a href="#contact">Amis</a></li>
+                  <li><a href="index.php?action=listeDesParties">Informations</a></li>
+                  <li><a href="index.php?action=jouerPartie">Amis</a></li>
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -38,7 +36,7 @@
                   </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li class="photoProfil"><a href="#"></a></li>
+                  <li class="photoProfil"><a href="index.php?action=monJoueur"></a></li>
                 </ul>
               </div>
             </div>
@@ -59,7 +57,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img class="first-slide" src="css/image/fond_carte.jpg" alt="First slide">
+            <img class="first-slide" src="css/image/fond.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption">
                 <h1>Création de partie.</h1>
@@ -69,7 +67,7 @@
             </div>
           </div>
           <div class="item">
-            <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+            <img class="second-slide" src="css/image/imagePNG.png" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
                 <h1>Rejoindre une partie.</h1>
@@ -80,7 +78,7 @@
             </div>
           </div>
           <div class="item">
-            <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+            <img class="third-slide" src="css/image/fond.jpg" alt="Third slide">
             <div class="container">
               <div class="carousel-caption">
                 <h1>Découvrir et communiquer.</h1>
@@ -140,14 +138,60 @@
 
 <!-- Placed at the end of the document so the pages load faster -->
 <script type="text/javascript">
-
-$(".navbar-brand").on("click", function( event ) {
-  $(".navbar-brand").animate({
-  }, 5000, function() {
-        $(".navbar-brand").css('transform', 'rotateY('+100+'deg)');
-  });
-  $(".photoProfil").css('background-image', 'url("css/image/logo_6_qui_prend.png")');
+// $(".navbar-brand").css('transform', 'rotateY('+100+'deg)')
+// $(".navbar-brand").on("click", function( event ) {
+//   $(".navbar-brand").animate({
+//   }, {
+//     duration: 50000,
+//     specialEasing
+//   },
+//   complete: function() {
+//     $( this ).after( "<div>Animation complete.</div>" );
+//   });
+//   $(".photoProfil").css('background-image', 'url("css/image/logo_6_qui_prend.png")');
+// });
+// function AnimateRotate(angle) {
+//     // caching the object for performance reasons
+//     var $elem = $('.navbar-brand');
+//
+//     // we use a pseudo object for the animation
+//     // (starts from `0` to `angle`), you can name it as you want
+//     $({deg: 0}).animate({deg: angle}, {
+//         duration: 4000,
+//         step: function(now) {
+//             // in the step-callback (that is fired each step of the animation),
+//             // you can use the `now` paramter which contains the current
+//             // animation-position (`0` up to `angle`)
+//             $elem.css({
+//                 transform: 'rotateX(' + now + 'deg)'
+//             });
+//         },
+//         step: function(now) {
+//           $elem.css({
+//               transform: 'rotateY(' + now + 'deg)'
+//           });
+//         }
+//     })
+//     .queue(step: function(now) {
+//       $elem.css({
+//           transform: 'rotateY(' + now + 'deg)'
+//       });
+//     });
+// };
+//
+//
+// $(".navbar-brand").on("click", function(event) {
+//   AnimateRotate(360);
+// });
+$(".navbar-brand").on("click", function(event) {
+$({deg: 0}).animate({deg: 360}, {
+    duration: 4000,
+    step: function(now) {
+      $(".navbar-brand").css({transform: 'rotate3d(1,2,0,'+now+'deg)'});
+    }
 });
+});
+
 </script>
 
 </script>

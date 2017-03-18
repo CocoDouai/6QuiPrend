@@ -4,7 +4,7 @@
 
 body {
   padding-bottom: 40px;
-  color: #1947b0;
+  color: #000;
 }
 
 
@@ -51,8 +51,9 @@ body {
 /* Declare heights because of positioning of img element */
 .carousel .item {
   height: 500px;
-  background-color: #552d2d;
+  background-color: #fff;
 }
+
 .carousel-inner > .item > img {
   position: absolute;
   top: 0;
@@ -64,7 +65,7 @@ body {
 }
 
 .photoProfil {
-  /*background-image: url("image/imagePNG.png");*/
+  background-image: url("image/image.jpg");
   text-decoration: line-through;
   background-color: #367fff;
   border-radius: 50%;
@@ -73,11 +74,11 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50px;
-  transform: scale(1.5);
+  transform: scale(1.6);
 }
 
 .navbar-brand {
-  background-image: url("image/6-qui-prend.jpg");
+  background-image: url("image/fond.jpg");
   text-decoration: line-through;
   background-color: #367fff;
   /*border-radius: 50%;*/
