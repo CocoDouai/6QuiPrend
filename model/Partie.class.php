@@ -3,12 +3,11 @@
 class Partie extends Model {
 
   private $id_partie;
-  private $id_joueur;
+  private $id_createur;
   private $demarrer;
-  private $nbr_joueurs;
-  private $scoreFinal;
   private $terminer;
-  private $type_de_jeu_choisi;
+  private $partie_public;
+  private $id_regle;
 
   // accesseurs
   // id du créateur
@@ -26,7 +25,7 @@ class Partie extends Model {
     $this->demarrer = true;
   }
 
-  
+
 
 
 }

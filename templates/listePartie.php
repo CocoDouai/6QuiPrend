@@ -33,7 +33,7 @@
               <a href="#" class="btn btn-lg btn-default">Learn more</a>
             </p>
             <div class="list-group">
-              <a href="#" class="list-group-item active">First item</a>
+              <a href="#" class="list-group-item active">First item </a>
               <a href="#" class="list-group-item">Second item</a>
               <a href="#" class="list-group-item">Third item</a>
             </div>

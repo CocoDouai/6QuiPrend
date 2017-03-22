@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="css/test.css">
 <link rel="stylesheet" href="css/lightsaber.css">
 
-<link rel="stylesheet" href="css/stars.css">
+<!-- <link rel="stylesheet" href="css/stars.css"> -->
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 <div id='stars'></div>
 <div id='stars2'></div>
@@ -19,7 +19,7 @@
   </span> -->
   <span>
 
-          <form method="get">
+          <form method="get" id="myForm">
             <input type="submit" name="action" value="Bienvenue" id="acceder" />
           </form>
   </span>
@@ -51,6 +51,29 @@
     <!-- </div> -->
 
 <script>
+
+// $("#acceder").on("click", function(){
+//
+// });
+
+function submitForm() {
+        document.getElementById("myForm").submit();
+}
+
+document.getElementById('acceder').onclick = function() {
+
+        setTimeout(submitForm(), 5000);
+        $("#stars").css('animation', 'animStar 3s linear infinite');
+    }
+
+// $("#acceder").click(function(e) {
+// 		var link = $(this).attr('src');
+//     setTimeout(function() {
+//         window.location.src = link;
+//     }, 2000);
+//     e.preventDefault();
+//     $("#stars").css('animation', 'animStar 5s linear infinite');
+// });
 
 // function maFonction() {
 //   $("#landing-content").animate({

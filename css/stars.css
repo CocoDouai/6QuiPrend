@@ -1,6 +1,7 @@
 body {
   height: 100%;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  /*background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);*/
+  background: radial-gradient(circle at center, #1b2735 0%, #090a0f 100%);
   /*background-color: #203f8e;*/
   overflow: hidden;
 }
@@ -70,6 +71,7 @@ body {
   margin-top: -60px;
   padding-left: 10px;
 }
+
 #title span {
   background: -webkit-linear-gradient(white, #38495a);
   -webkit-background-clip: text;
@@ -81,6 +83,7 @@ body {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-3000px);
+    /*transform: translateZ(-2000px);*/
+    transform: translateY(-2000px);
   }
 }

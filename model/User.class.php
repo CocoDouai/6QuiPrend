@@ -45,9 +45,6 @@ class User extends Model {
       return parent::exec('USER_LIST');
     }
 
-    public static function addSqlQuery($name, $requeteSQL) {
-
-    }
 
     public static function create($login, $password, $mail, $nom, $prenom) {
       $user = new User;

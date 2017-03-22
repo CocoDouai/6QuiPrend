@@ -8,4 +8,4 @@ class Manche extends Model {
 
 }
 
- ?>
+?>

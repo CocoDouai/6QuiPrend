@@ -57,7 +57,6 @@ class AnonymousController extends Controller {
         DB_createUser($user);
         // $user->getId();
         $_SESSION['user']=$user;
-        print_r($user);
         $newRequest = new Request();
         $newRequest->write('controller','user');
         $newRequest->write('user',$user->setId());

@@ -18,7 +18,6 @@ class Model extends MyObject {
     $this->props[$prop] = $val;
   }
 
-
   protected static function db(){
     return DatabasePDO::getCurrentPDO();
   }

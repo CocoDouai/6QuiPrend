@@ -104,7 +104,7 @@
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
           <div class="list-group">
             <a href="#" class="list-group-item active" id="windu">Mace Windu<img src="css/image/fond.jpg" alt=""></a>
-            <a href="#" class="list-group-item">Yoda<img src="css/image/fond.jpg" alt=""></a>
+            <a href="#" class="list-group-item" id="yoda">Yoda<img src="css/image/fond.jpg" alt=""></a>
             <a href="#" class="list-group-item">Obi-Wan<img src="css/image/fond.jpg" alt=""></a>
             <a href="#" class="list-group-item">Anakin<img src="css/image/fond.jpg" alt=""></a>
             <a href="#" class="list-group-item">Dark Vador<img src="css/image/fond.jpg" alt=""></a>
@@ -127,9 +127,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script type="text/javascript">
+    // Que des images carrés.
       $("#windu").on("click", function(){
-        // $(".avatar").css('background-image', 'url("css/image/fond.jpg")' );
         $(".avatar img").attr('src', 'css/image/fond.jpg' );
+
       });
-      // Que des images carrés.
+
     </script>
